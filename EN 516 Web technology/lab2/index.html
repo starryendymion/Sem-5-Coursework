@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neaty Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #0066a2;
+            padding: 20px;
+            color: white;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar ul li a:hover {
+            color: yellow;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>Neaty</h2>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showText('welcome')">Welcome</a></li>
+            <li><a href="javascript:void(0)" onclick="showText('about')">About Us</a></li>
+            <li><a href="javascript:void(0)" onclick="showImage('image1.jpg')">Gallery One</a></li>
+            <li><a href="javascript:void(0)" onclick="showImage('image2.jpg')">Second Gallery</a></li>
+            <li><a href="javascript:void(0)" onclick="showImage('image3.jpg')">Third Gallery</a></li>
+            <li><a href="javascript:void(0)" onclick="showText('Contact Us')">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <h1>Welcome to Neaty Design</h1>
+        <p>Select a menu item to view content.</p>
+    </div>
+</div>
+
+<script>
+    function showText(section) {
+        let content = '';
+        if (section === 'welcome') {
+            content = `
+                <h1>Welcome to Neaty Design</h1>
+                <p>Neaty is a simple and clean design HTML CSS template for any kind of website. Feel free to use this layout. Please tell your friends about our website. Thank you.</p>
+                <p>Suspensisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at, eleifend justo. Quisque placerat ante in ex tempor, ultrices bibendum nunc finibus. Etiam luctus nec eros vel pulvinar.</p>
+            `;
+        } else if (section === 'about') {
+            content = `
+                <h1>About the Team</h1>
+                <p>Sed turpis nunc, laoreet sit amet fermentum sed, euismod ac justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p>Donec ut lectus semper, sollicitudin risus blandit, mattis felis. Nam non malesuada odio. Vestibulum vaius, arcu eget rutrum consequat, arcu lacus imperdiet arcu, id pulvinar arcu erat vel magna.</p>
+                <p>Ut commodo malesuada eros, quis consequat ante tincidunt ut. Suspendisse malesuada augue vitae nisi sollicitudin placerat.</p>
+            `;
+        }
+        document.getElementById('content').innerHTML = content;
+    }
+
+    function showImage(image) {
+        document.getElementById('content').innerHTML = '<img src="' + image + '" alt="Menu Image">';
+    }
+</script>
+
+</body>
+</html>
