@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        let childWindows = [];
+
+        function openImages() {
+            const imageWindow = window.open("", "Images", "width=400,height=300");
+            imageWindow.document.write(`
+                <html>
+                    <head><title>Images</title></head>
+                    <body>
+                        <h2>Images</h2>
+                        <img src="img1.jpg">
+                        <img src="img2.jpg">
+                        <img src="img3.jpg">
+                        <img src="img4.jpg">
+                    </body>
+                </html>
+            `);
+            childWindows.push(imageWindow);
+        }
+
+        function openTable() {
+            const tableWindow = window.open("", "Table", "width=400,height=300");
+            tableWindow.document.write(`
+                <html>
+                    <head><title>Students Table</title></head>
+                    <body>
+                        <h2>Students</h2>
+                        <table border="1">
+                            <tr>
+                                <th>Name</th>
+                                <th>Roll No</th>
+                                <th>Branch</th>
+                            </tr>
+                            <tr>
+                                <td>Divye joshi</td>
+                                <td>101</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Aman Kumar</td>
+                                <td>102</td>
+                                <td>ECE</td>
+                            </tr>
+                            <tr>
+                                <td>Aditya</td>
+                                <td>103</td>
+                                <td>ME</td>
+                            </tr>
+                        </table>
+                    </body>
+                </html>
+            `);
+            childWindows.push(tableWindow);
+        }
+
+        function openList() {
+            const listWindow = window.open("", "List", "width=400,height=300");
+            listWindow.document.write(`
+                <html>
+                    <head><title>Branches List</title></head>
+                    <body>
+                        <h2>Branches</h2>
+                        <ul>
+                            <li>CSE</li>
+                            <li>ECE</li>
+                            <li>ME</li>
+                            <li>SWE</li>
+                        </ul>
+                    </body>
+                </html>
+            `);
+            childWindows.push(listWindow);
+        }
+
+        function closeAllWindows() {
+            childWindows.forEach(win => {
+                if (!win.closed) {
+                    win.close();
+                }
+            });
+            window.close();
+        }
+    </script>
+</head>
+<body>
+
+<h1>DOM Application</h1>
+<button onclick="openImages()">Images</button>
+<button onclick="openTable()">Tables</button>
+<button onclick="openList()">Lists</button>
+<button onclick="closeAllWindows()">Close Windows</button>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <name>Divye Joshi</name>
+        <rollno>22/11/EC/001</rollno>
+        <department>Computer Science</department>
+        <year>3</year>
+        <university>JNU</university>
+    </student>
+    <student>
+        <name>Klein Moretti</name>
+        <rollno>666</rollno>
+        <department>History</department>
+        <year>2</year>
+        <university>Tingen University</university>
+    </student>
+    <student>
+        <name>Emily Johnson</name>
+        <rollno>103</rollno>
+        <department>Mechanical Engineering</department>
+        <year>4</year>
+        <university>MIT></university>
+    </student>
+</students>
